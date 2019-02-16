@@ -1,0 +1,48 @@
+
+
+<div class="padding">
+  <div class="elevation border-radius overflow-hidden route-animations-elements">
+
+    <mat-progress-spinner *ngIf="!ready" mode="indeterminate"></mat-progress-spinner>
+
+    <div *ngIf="ready">
+      <mat-table #table [dataSource]="dataSource" matSort>
+
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>NOMBRE</mat-header-cell>
+          <mat-cell *matCellDef="let row; let i = index">
+            {{row.name || '-' }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="house">
+          <mat-header-cell *matHeaderCellDef>CASA</mat-header-cell>
+          <mat-cell *matCellDef="let row; let i = index">
+            {{row.house || '-' }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="options">
+          <mat-header-cell class="actions-cell" *matHeaderCellDef>OPCIONES</mat-header-cell>
+          <mat-cell class="actions-cell" *matCellDef="let row">
+            <button mat-raised-button [routerLink]="['/character', row._id]">Ver detalles</button>
+          </mat-cell>
+        </ng-container>
+
+
+
+
+        <mat-header-row *matHeaderRowDef="visibleColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: visibleColumns;"
+                 class="clickable route-animations-elements"></mat-row>
+
+      </mat-table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+
+
+  </div>
+</div>

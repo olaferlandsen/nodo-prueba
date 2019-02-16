@@ -1,0 +1,43 @@
+<div class="padding">
+  <button mat-raised-button [routerLink]="['']">Volver</button>
+
+
+  <div class="padding">
+
+    <mat-progress-spinner *ngIf="!ready" mode="indeterminate"></mat-progress-spinner>
+    <div *ngIf="ready">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ character?.name }}<sup><small> ({{ character?.slug }})</small></sup></mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <h4>Ranking # {{ character?.pageRank}}</h4>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+
+        <mat-card-header>
+          <mat-card-title>Libros</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let book of character?.books">{{ book }}</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+
+        <mat-card-header>
+          <mat-card-title>Títulos Nobiliarios</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let title of character?.titles">{{ title }}</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

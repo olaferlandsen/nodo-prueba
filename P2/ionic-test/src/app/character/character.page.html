@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Personaje</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+
+        <ion-card-header>
+            <ion-avatar slot="start" *ngIf="character?.imageLink">
+                <ion-img [src]=" 'https://api.got.show' + character.imageLink"></ion-img>
+            </ion-avatar>
+            <ion-card-title>{{ character?.name }}</ion-card-title>
+            <ion-card-subtitle>{{ character?.slug }}; PageRank# {{ character?.pageRank }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+
+
+            <ion-list>
+                <ion-list-header *ngIf="character?.books.length > 0">Libros</ion-list-header>
+                <ion-item *ngFor="let book of character?.books">
+                    <ion-label>{{ book }}</ion-label>
+                </ion-item>
+
+                <ion-list-header *ngIf="character?.titles.length > 0">Titulos</ion-list-header>
+                <ion-item *ngFor="let title of character?.titles">
+                    <ion-label>{{ title }}</ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

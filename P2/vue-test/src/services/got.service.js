@@ -26,7 +26,13 @@ export function listsAllCharacters () {
  * @return {Obj} response, an object with the information of all the GoT characters.
  */
 export function getACharacter (id) {
-  // CODE HERE
+  return mainService.get(`/characters/byId/${id}`)
+    .then(res => res.data)
+    .catch((error) => {
+      return {
+        error: error
+      }
+    })
 }
 
 export default gotService

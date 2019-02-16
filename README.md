@@ -67,3 +67,100 @@ Esta prueba sirve para determinar las capacidades a nivel lógicas en javascript
 # LA PRUEBA NO TIENE LÍMITE DE TIEMPO, AUNQUE CUALQUIER ENTREGA POR SOBRE 1 DÍA SERÁ EVALUADA DE FORMA MÁS RIGUROSA
 
 # ¡ÉXITO!
+
+
+
+
+# SOLUCIONES
+
+## 1. Logica Javascript
+> En esta prueba no se utilizaron librerias adicionales.
+
+### Comentarios en ejercicios
+
+#### Ejercicios #1, #2, #3, #4, #5, #6, #7, #8, #9
+En general, se utilizar para este ejercicio el metodo `Array.slice()` para no modificar la matriz original y asi generar una copia de tal, la que si podremos manipular con `Array.map` por ejemplo.
+
+Algunos de los metodos utilizados furon:
+1. `Array.slice` - devuelve una copia de una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido). El array original no se modificará.
+1. `Array.map` - crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
+1. `Array.filter` - crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada.
+1. `Array.find` - devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.
+1. `Array.findIndex` - devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada.
+1. `Array.sort` - ordena los elementos de un array localmente y devuelve el array.
+1. `Array.reduce` - aplica una función a un acumulador y a cada valor de un array (de izquierda a derecha) para reducirlo a un único valor.
+
+
+#### Ejercicio #8
+En este ejercicio se pide "***No modificar arreglos originales para no alterar las respuestas anteriores al correr la solución***"
+Por tanto se realizo una copia de las matrices originales y estas fueron modificas, dejando las originales sin cambios.
+Lo anterior de todas formas deja algunas variables sin usar([Ver linea #175]( logic-test.js#L175 ).
+
+// 8 Agregar un nuevo equipo con datos ficticios a "teams", asociarlo a la liga de Francia y agregar un total de 4 victorias en champions.
+// Luego devolver el lugar que ocupa este equipo en el ranking de la pregunta 2.
+// No modificar arreglos originales para no alterar las respuestas anteriores al correr la solución
+
+#### Ejercicio #9
+En este ejercicio se plantean dos formas de resolver el problema dado lo siguiente:
+1. Las funciones declaradas como `async` de por si retornan una promesa, por tanto no *seria* necesario implementar `new Promise(...)`. 
+2. Las funciones que no son declaradas como `async` no retornaran promesa alguna, salvo que se implemente el resultado como tal, usando por ejemplo `new Promise(...)`.
+
+
+## 2. Capacidades en frontend (Vue JS)
+### Angular v6.1
+Para poder probar esta apliación, es necesario acceder a la carpeta contenedora `./P2/angular-test` para instalar las dependencias con el comando `npm install`,
+Una vez instaladas las dependencias, se podra probar la aplicación con ejecutando el comando `ng serve`.
+
+Esta aplicación utiliza las siguientes librerias adicionales:
+
+1. @angular/material
+2. @angular/animations
+2. @angular/router
+
+
+### ReactNative v16.5
+> Esta aplicación requiere contar con emulador ya sea para Android y/o iOS o en su defecto, conectar un dispositivo movil mediente USB al equipo.
+
+Para poder probar este test, es necesario acceder a la carpeta contenedora `./P2/reactnative-test` para instalar las dependencias con el comando `yarn install`,
+Una vez instaladas las dependencias, se podra probar la aplicación con ejecutando cualquier a de los siguientes comandos
+
+Esta aplicación utiliza las siguientes librerias adicionales:
+
+1. react-native-elements
+2. react-navigation
+
+#### Android(Windows, Linux, OSX)
+`npm run android`
+
+#### iOS(solo OSX)
+`npm run ios`
+
+
+### Ionic v4
+Para poder probar este test, es necesario acceder a la carpeta contenedora `./P2/ionic-test` para instalar las dependencias con el comando `npm install`,
+Una vez instaladas las dependencias, se podra probar la aplicación con ejecutando el comando `ionic serve`.
+
+Esta aplicación no utiliza librerias adicionales.
+
+### Vue v2.5
+Para poder probar este test, es necesario acceder a la carpeta contenedora `./P2/vue-test` para instalar las dependencias con el comando `npm install`,
+Una vez instaladas las dependencias, se podra probar la aplicación con ejecutando el comando `npm run dev`.
+
+Esta aplicación utiliza las siguientes librerias adicionales:
+
+1. bootstrap
+2. axios(`parte de la prueba original`)
+
+
+### HTML + JavaScript(XHR)
+
+Para esta prueba se implemento un sistema de llamadas XHR para cargar plantillas, ademas de la información obtenida desde la misma API de GoT.
+Esta prueba no usa librerias adicionales, si bien utiliza sintaxis `ES6`, en su totalidad utiliza la API DOM compatible con ES5.
+Para poder visualizar el ejemplo, es necesario servir `index.html` mediente el protocolo `http` o `https`, de lo contrario saltara error, pues requiere del uso de archivos locales, los cuales por politica de CORS no es posible acceder.
+
+Incluye:
+1. Buscador
+2. Modal
+3. Overlay
+4. Lista
+5. Detalle

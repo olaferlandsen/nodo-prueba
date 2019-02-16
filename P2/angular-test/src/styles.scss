@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "styles/var";
+
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+@import "styles/cards";
+@import "styles/misc";
+@import "styles/utilities";
+
+.mat-progress-spinner {
+  margin:0 auto;
+}

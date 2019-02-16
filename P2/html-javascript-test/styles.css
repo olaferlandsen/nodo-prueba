@@ -1,0 +1,80 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    background:#ecf0f1 none;
+}
+.container {
+    border:1px solid #95a5a6;
+    background-color: white;
+    padding:10px 15px;
+    margin:10px auto;
+    border-radius: 10px;
+    width: 40vw;
+}
+.list {
+    margin:0;
+    padding:0;
+}
+.list input {
+    width: 100%;
+    padding:10px 15px;
+    border-radius: 6px;
+    border:1px solid #cccccc;
+    background-color: #e7e7e7;
+    outline: none;
+}
+.list ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.list ul li {
+    display: flex;
+    margin:0;
+    padding:0 10px;
+    list-style: none;
+}
+.list ul li:hover {
+    background-color: #ececec;
+}
+.list ul li+li {
+    border-top:1px solid #cccccc;
+}
+
+.list ul li h1 {
+    font-size: 100%;
+}
+.list ul li h2 {
+    font-size: 100%;
+    margin-left: auto;
+}
+
+#overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: #2c3e50;
+    opacity: 0.4;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+
+}
+#modal {
+    position: fixed;
+    top:10vh;
+    width: 50vw;
+    height: auto;
+    left: 25vw;
+}
+.character {
+    background-color: white;
+    border-radius: 6px;
+    padding:10px 15px;
+}
+
+.hide {
+    display: none !important;
+}

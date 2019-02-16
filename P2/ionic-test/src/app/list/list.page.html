@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>
+      Personajes GoT
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar (ionChange)="onChange($event)"></ion-searchbar>
+
+
+    <ion-virtual-scroll [items]="characters">
+        <ion-item *virtualItem="let character" [routerLink]="['/character', character._id]">
+            <!--
+            <ion-avatar slot="start" class="hydrated">
+                <img [src]="'https://api.got.show' + character.imageLink">
+            </ion-avatar>
+            -->
+            <ion-label>
+                <h2>{{ character.name }}</h2>
+                <h3>{{ character.house }}</h3>
+            </ion-label>
+        </ion-item>
+    </ion-virtual-scroll>
+
+</ion-content>

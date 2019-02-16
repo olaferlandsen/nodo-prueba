@@ -1,19 +1,34 @@
 <template>
   <div>
-    <h1 v-show="isLoading">
-      Cargando personajes ...
-    </h1>
-    <table v-show="!isLoading">
-      <tr>
-        <th>Nombre</th>
-        <th>Casa</th>
-        <th>Detalle</th>
-      </tr>
+
+
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Personajes</a>
+
+    </nav>
+
+    <div v-show="isLoading" class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <table v-show="!isLoading" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Casa</th>
+          <th>Detalle</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr v-for="character in characters">
         <td>{{ character.name }}</td>
         <td>{{ character.house }}</td>
-        <td> <button @click="goToDetail(character._id)">Ver detalle</button> </td>
+        <td> <button class="btn btn-danger" @click="goToDetail(character._id)">Ver detalle</button> </td>
       </tr>
+      </tbody>
+
     </table>
   </div>
 </template>
@@ -58,7 +73,7 @@
        * @method goToDetail
        */
       goToDetail(id) {
-        // CODE HERE
+        this.$router.push({name: 'character', params: {id}})
       }
     }
   }
